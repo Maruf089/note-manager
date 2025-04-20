@@ -40,7 +40,7 @@ public class NoteApp {
                 case "4" -> 4;
                 default -> 0;
             };
-            System.out.print(choice);
+//            System.out.print(choice);
 
             switch (choice){
                 case 1 -> {
@@ -56,6 +56,7 @@ public class NoteApp {
                     manager.saveNote(note);
                     System.out.println("Note saved.");
                 }
+
                 case 2 -> {
                     List<Note> notes = manager.listNotes();
                     if (notes.isEmpty()) {
@@ -67,6 +68,16 @@ public class NoteApp {
                         });
                     }
                 }
+
+                case 3 -> {
+                    manager.printStats();
+                }
+
+                case 4 -> {
+                    System.out.println("Exiting...");
+                    return;
+                }
+
                 default -> System.out.println("Invalid Choice, Try Again");
             }
         }
