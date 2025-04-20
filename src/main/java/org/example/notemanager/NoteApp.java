@@ -2,6 +2,7 @@ package org.example.notemanager;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -54,7 +55,17 @@ public class NoteApp {
                     var note = new Note(title, content.toString().strip(), LocalDateTime.now());
                     manager.saveNote(note);
                     System.out.println("Note saved.");
-                    break;
+                }
+                case 2 -> {
+                    List<Note> notes = manager.listNotes();
+                    if (notes.isEmpty()) {
+                        System.out.println("No notes found.");
+                    } else {
+                        notes.forEach(n -> {
+                            System.out.println("\n" + n.preview());
+                            System.out.println("------------\n" + n.getContent() + "\n------------");
+                        });
+                    }
                 }
                 default -> System.out.println("Invalid Choice, Try Again");
             }
