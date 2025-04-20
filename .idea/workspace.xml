@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ff63b83-1f2e-472d-8665-a2a863dad2ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/notemanager/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/notemanager/NoteApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/notemanager/NoteApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

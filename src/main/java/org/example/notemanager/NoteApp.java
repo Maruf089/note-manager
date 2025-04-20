@@ -20,7 +20,18 @@ public class NoteApp {
             System.out.println("4. Exit");
             System.out.print("Choose an option: ");
 
-            int choice = switch (scanner.nextLine()) {
+            String input = scanner.nextLine();
+
+//            int choice;
+//            switch (input) {
+//                case "1": choice = 1; break;
+//                case "2": choice = 2; break;
+//                case "3": choice = 3; break;
+//                case "4": choice = 4; break;
+//                default: choice = 0;
+//            }
+
+            int choice = switch (input) {
                 case "1" -> 1;
                 case "2" -> 2;
                 case "3" -> 3;
