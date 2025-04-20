@@ -4,17 +4,9 @@ A simple Java console application to manage personal notes. This project is desi
 
 ---
 📁 Project Structure
+-----
+![Image](https://github.com/user-attachments/assets/3b9f5596-da0c-40bd-b275-fbcbcfa18e75)
 
-note-manager/
-├── pom.xml
-├── README.md
-└── src/
-    └── main/
-        └── java/
-            └── com/example/notemanager/
-                ├── Note.java
-                ├── NoteApp.java
-                └── NoteManager.java
 
 
 
