@@ -8,9 +8,12 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.teeing;
 
 public class NoteManager {
     private static final Path NOTES_DIR = Paths.get("notes");
@@ -49,5 +52,21 @@ public class NoteManager {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void printStats(){
+        var notes = listNotes();
+        var stats = notes.stream().collect(
+                teeing(
+                       Collectors.counting(),
+                       Collectors.averagingInt(n -> n.getContent().length()),
+                        (count,avgContent) -> Map.of("Count",count,
+                        "Average Length", avgContent)
+                )
+        );
+        // The Collectors.teeing method in Java (introduced in Java 12) is used to combine two collectors into a single collector.
+        // It takes three arguments: two collectors and a "merger" function that combines the results from the two collectors
+        System.out.println("\n--- Note Stats ---");
+        stats.forEach((k, v) -> System.out.println(k + ": " + v));
     }
 }
