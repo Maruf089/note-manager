@@ -1,11 +1,12 @@
 package org.example.notemanager;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
 
 public class NoteApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Hello world!");
         var scanner = new Scanner(System.in);
         var manager = new NoteManager();
@@ -51,14 +52,12 @@ public class NoteApp {
                         content.append(line).append("\n");
                     }
                     var note = new Note(title, content.toString().strip(), LocalDateTime.now());
-
-
+                    manager.saveNote(note);
+                    System.out.println("Note saved.");
+                    break;
                 }
                 default -> System.out.println("Invalid Choice, Try Again");
             }
-        }
-
-
         }
 
 
