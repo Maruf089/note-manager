@@ -1,6 +1,6 @@
-# 🗒️ Note Manager
+# 📝 Note Manager (Java 11–17)
 
-A simple Java console application to manage personal notes. This project is designed to showcase modern features introduced in **Java 11–14**.
+A simple Java console application to manage personal notes. This project is designed to showcase modern features introduced in **Java 11–17**.
 
 ---
 📁 Project Structure
